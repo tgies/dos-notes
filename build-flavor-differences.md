@@ -2,12 +2,17 @@
 
 ## Overview
 
-The DOS 4.0 source code supports two build flavors controlled by the `IBMCOPYRIGHT` flag in `src/INC/VERSION.INC`:
+The DOS 4.0 source code supports three build flavors via a 2-flag matrix in `src/INC/VERSION.INC` (lines 26-32):
 
 | Flavor | IBMVER | IBMCOPYRIGHT | System Files | Our Build Name |
 |--------|--------|--------------|--------------|----------------|
 | IBM PC-DOS | TRUE | TRUE | IBMBIO.COM, IBMDOS.COM | `pcdos` |
-| OEM MS-DOS | TRUE | FALSE | IO.SYS, MSDOS.SYS | `msdos` (default) |
+| Clone (OEM) | TRUE | FALSE | IO.SYS, MSDOS.SYS | `msdos` (default) |
+| MS (portable) | FALSE | FALSE | IO.SYS, MSDOS.SYS | `msdos-portable` (broken) |
+
+The fourth combination (IBMVER=FALSE, IBMCOPYRIGHT=TRUE) is invalid — VERSION.INC emits an error at build time.
+
+The `msdos-portable` flavor (IBMVER=FALSE) disables IBM PC hardware-specific code, targeting non-IBM clones. It doesn't currently build. This document focuses on the **IBMCOPYRIGHT differences** between `pcdos` and `msdos`, which are the two working flavors.
 
 **Key Finding:** The `msdos` flavor (IBMCOPYRIGHT=FALSE) contains **more bug fixes** than the `pcdos` flavor.
 
