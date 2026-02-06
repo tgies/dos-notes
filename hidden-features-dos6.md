@@ -193,8 +193,8 @@ These BUGBUG markers are Microsoft's internal convention for "known bug, fix lat
 | **Chuck** | SmartDrive debug code | `dev/smartdrv/int2f.asm:458,466` |
 | **Ericst** | CHOICE.COM | `c6ers/choice/choice.asm:1-3` (created 5/14/92) |
 | **c-PaulB** | Format/utility tools | Various |
-| **Steve Zeck** | Compression (EXPAND) | `c6ers/tools2/expand/expand.c` |
-| **David Dickman** | Compression (EXPAND) | `c6ers/tools2/expand/expand.c` |
+| **Steve Zeck** | Compression (EXPAND) | `cmd/expand/expand.c` |
+| **David Dickman** | Compression (EXPAND) | `cmd/expand/expand.c` |
 | **scottq** | SmartDrive MagicDrv detection | `dev/smartdrv/drvtype.asm:337`, `bambinit.asm:789` (7/30/92) |
 | **Floyd Rogers [floydr]** | h2inc tool | Multiple modifications 1989 |
 | **Jameelh** | h2inc tool | Multiple files |
